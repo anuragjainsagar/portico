@@ -225,6 +225,16 @@ public class MomFederate
 	{
 		return encodeTime( version, federate.getTimeStatus().getRequestedTime() );
 	}
+	
+	private byte[] getConveyRegionDesignatorSets( HLAVersion version )
+	{
+		return encodeBoolean( version, true );
+	}
+	
+	private byte[] getConveyProducingFederate( HLAVersion version )
+	{
+		return encodeBoolean( version, true );
+	}
 
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////// Update Generating Methods ///////////////////////////
@@ -335,6 +345,12 @@ public class MomFederate
 					break;
 				case TimeAdvancingTime:
 					attributes.put( attributeHandle, getTimeAdvancingTime(version) );
+					break;
+				case ConveyRegionDesignatorSets:
+					attributes.put( attributeHandle, getConveyRegionDesignatorSets(version) );
+					break;
+				case ConveyProducingFederate:
+					attributes.put( attributeHandle, getConveyProducingFederate(version) );
 					break;
 				default:
 					break; // ignore

@@ -76,7 +76,9 @@ public class Mom
 		ObjectInstancesRegistered(32),
 		ObjectInstancesDiscovered(33),
 		TimeGrantedTime(34),
-		TimeAdvancingTime(35);
+		TimeAdvancingTime(35),
+		ConveyProducingFederate(498),        // 1516e 
+		ConveyRegionDesignatorSets(499);     // 1516e
 		
 		public final int handle;
 		private Federate( int handle )
@@ -271,6 +273,8 @@ public class Mom
 		federate1516eAttributes.put( "HLAobjectInstancesDiscovered", Federate.ObjectInstancesDiscovered );
 		federate1516eAttributes.put( "HLAtimeGrantedTime", Federate.TimeGrantedTime );
 		federate1516eAttributes.put( "HLAtimeAdvancingTime", Federate.TimeAdvancingTime );
+		federate1516eAttributes.put( "HLAconveyProducingFederate", Federate.ConveyProducingFederate );
+		federate1516eAttributes.put( "HLAconveyRegionDesignatorSets", Federate.ConveyRegionDesignatorSets );
 
 		federation1516eAttributes.put( "HLAfederationName", Federation.FederationName );
 		federation1516eAttributes.put( "HLAfederatesInFederation", Federation.FederatesInFederation );
@@ -641,8 +645,8 @@ public class Mom
 		federate.addAttribute( newAttribute("HLAobjectInstancesDiscovered",Federate.ObjectInstancesDiscovered.handle) );
 		federate.addAttribute( newAttribute("HLAtimeGrantedTime",Federate.TimeGrantedTime.handle) );
 		federate.addAttribute( newAttribute("HLAtimeAdvancingTime",Federate.TimeAdvancingTime.handle) );
-		federate.addAttribute( newAttribute("HLAconveyRegionDesignatorSets",498) );
-		federate.addAttribute( newAttribute("HLAconveyProducingFederate",499) );
+		federate.addAttribute( newAttribute("HLAconveyRegionDesignatorSets",Federate.ConveyRegionDesignatorSets.handle) );
+		federate.addAttribute( newAttribute("HLAconveyProducingFederate",Federate.ConveyProducingFederate.handle) );
 
 		///////////////////////////////////////////////////////////////
 		///////////////// create the federation class /////////////////
